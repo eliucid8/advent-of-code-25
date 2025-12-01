@@ -82,7 +82,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "write input: %v\n", err)
         os.Exit(1)
     }
-    if err := os.WriteFile(filepath.Join(dataDir, "test_input.txt"), []byte(""), 0o644); err != nil {
+    if err := os.WriteFile(filepath.Join(dataDir, "test-input.txt"), []byte(""), 0o644); err != nil {
         fmt.Fprintf(os.Stderr, "write test input: %v\n", err)
         os.Exit(1)
     }
