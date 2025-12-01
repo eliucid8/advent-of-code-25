@@ -1,3 +1,3 @@
-module github.com/you/advent_of_code_go
+module github.com/eliucid8/advent-of-code-25
 
-go 1.21
+go 1.25

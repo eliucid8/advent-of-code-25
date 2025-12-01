@@ -3,8 +3,9 @@ package main
 import (
     "fmt"
     "log"
+	"strconv"
 
-    "github.com/you/advent_of_code_go/internal/util"
+    "github.com/eliucid8/advent-of-code-25/internal/util"
 )
 
 func main() {
@@ -13,15 +14,23 @@ func main() {
         log.Fatalf("read input: %v", err)
     }
 
-    sum := 0
+    displacement := 0
+	sum := 0
     for _, l := range lines {
         if l == "" {
             continue
         }
-        var v int
-        fmt.Sscan(l, &v)
-        sum += v
+		distance, _ := strconv.Atoi(l[1:])
+		if l[0] == "R" {
+			displacement += distance
+		} else {
+			displacement -= distance
+		}
+	    displacement %= 100
+		if displacement == 0 {
+			sum += 1
+		}
     }
 
-    fmt.Println("Sum:", sum)
+    fmt.Println("sum:", sum)
 }
